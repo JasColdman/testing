@@ -1,0 +1,24 @@
+declare
+  obj json;
+begin
+  obj := json('{"a": true,
+                "b": "hr" }');
+  dbms_output.put_line('json step 1');
+  obj.output;
+
+
+  dbms_output.put_line('json step 2');
+  obj := json('
+{
+  "a": null,
+  "b": 12.243,
+  "c": 2e-3,
+  "d": [true, false, "abdc", [1,2,3]],
+  "e": [3, {"e2":3}],
+  "f": {
+    "f2":true
+  }
+}');
+  obj.output;
+
+end;
